@@ -20,7 +20,7 @@ Walker::Walker() {
   // Initilize the laser objects
   this->IsObstacleNearby = false;
   this->laser_subscriber = n.subscribe <sensor_msgs::LaserScan> ("/scan", 1000,
-  &Walker::checkObstacle, this);
+  &Walker::LaserCallback, this);
 
   // Initizlize the velocity objects
   this->velocity_publisher = n.advertise <geometry_msgs::Twist> ("/cmd_vel", 1000);
