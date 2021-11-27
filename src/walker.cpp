@@ -31,12 +31,12 @@ Walker::Walker() {
  * @param msg 
  */
 void Walker::LaserCallback(const sensor_msgs::LaserScan::ConstPtr& msg) {
-  for (auto range : msg->ranges) {
-    if ( range < 1 ) {
+  this->IsObstacleNearby = false;
+  for (auto i = 0; i < msg->ranges.size()-260; i++) {
+    auto depth = msg->ranges[i];
+    if ( depth < 1 ) {
       this->IsObstacleNearby = true;
       break;
     }
   }
 }
-
-
