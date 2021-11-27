@@ -13,3 +13,11 @@ A walker algorithm for the turtlebot3 in a ROS package.
 
   * Make sure you have a caktin workspace setup. Follow [this](http://wiki.ros.org/catkin/Tutorials/create_a_workspace) for reference.
 
+
+# How to build this repo
+```
+  * cd ~/catkin_ws/src
+  * git clone https://github.com/SamPusegaonkar/turtlebot3_walker
+  * cd ~/catkin_ws/
+  * catkin_make
+```
