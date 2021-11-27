@@ -21,3 +21,14 @@ A walker algorithm for the turtlebot3 in a ROS package.
   * cd ~/catkin_ws/
   * catkin_make
 ```
+
+
+# How to run CppLint, CppCheck
+```
+  * cd ~/catkin_ws/src/turtlebot3_walker
+
+  * cppcheck --enable=all --std=c++11 --language=c++ -I include/ --suppress=missingIncludeSystem $( find . -name *.cpp | grep -vE -e "^./build/" -e "^./vendor/")  $( find . -name *.h | grep -vE -e "^./build/" -e "^./vendor/")  --output-file=results/cppcheck_process.txt > results/cppcheck_result.txt
+  
+  * cpplint --verbose 5 $( find . -name *.cpp | grep -vE -e "^./build/" -e "^./vendor/") $( find . -name *.h | grep -vE -e "^./build/" -e "^./vendor/") > results/cpplint_result.txt
+
+```
