@@ -8,8 +8,28 @@
  */
 
 #ifndef INCLUDE_WALKER_H_
+#include "ros/ros.h"
+#include "sensor_msgs/LaserScan.h"
+#include "geometry_msgs/Twist.h"
 
 class Walker {
+ public:
+  /**
+    * @brief Constructor for the Walker class
+  */
+  Walker();
+
+  /**
+   * @brief Moves the robot
+   * @return void
+   */
+  void Travel();
+
+  /**
+   * @brief A callback method for the laser scanner. This method will set the IsObstacleNearby flag.
+   * @param msg 
+   */
+  void LaserCallback(const sensor_msgs::LaserScan::ConstPtr& msg);
 };
 
 #endif  // INCLUDE_WALKER_H_
