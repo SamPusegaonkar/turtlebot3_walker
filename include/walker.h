@@ -30,6 +30,13 @@ class Walker {
    * @param msg 
    */
   void LaserCallback(const sensor_msgs::LaserScan::ConstPtr& msg);
+
+ private:
+  ros::Subscriber laser_subscriber;  // Subscribes to get laser data
+  ros::Publisher velocity_publisher;  // Publishes velocity
+  geometry_msgs::Twist velocity;
+  ros::NodeHandle n;
+  bool IsObstacleNearby;  // flag to see if obstacle is nearby
 };
 
 #endif  // INCLUDE_WALKER_H_
