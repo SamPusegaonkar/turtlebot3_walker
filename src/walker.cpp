@@ -26,3 +26,17 @@ Walker::Walker() {
   this->velocity_publisher = n.advertise <geometry_msgs::Twist> ("/cmd_vel", 1000);
 }
 
+/**
+ * @brief A laser callback method to see if a obstacle is nearby
+ * @param msg 
+ */
+void Walker::LaserCallback(const sensor_msgs::LaserScan::ConstPtr& msg) {
+  for (auto range : msg->ranges) {
+    if ( range < 1 ) {
+      this->IsObstacleNearby = true;
+      break;
+    }
+  }
+}
+
+
