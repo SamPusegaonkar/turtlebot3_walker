@@ -57,7 +57,7 @@ void Walker::LaserCallback(const sensor_msgs::LaserScan::ConstPtr& msg) {
   this->IsObstacleNearby = false;
   for (auto i = 0; i < msg->ranges.size()-260; i++) {
     auto depth = msg->ranges[i];
-    if ( depth < 1 ) {
+    if ( depth < 0.65 ) {
       this->IsObstacleNearby = true;
       break;
     }
