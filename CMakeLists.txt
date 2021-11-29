@@ -2,22 +2,16 @@ cmake_minimum_required(VERSION 3.0.2)
 project(turtlebot3_walker)
 
 ## Compile as C++11, supported in ROS Kinetic and newer
-<<<<<<< HEAD
+
 add_compile_options(-std=c++11)
-=======
-# add_compile_options(-std=c++11)
->>>>>>> 9dbbf8d9e1498b8659e6ebf1492be5598f3640b4
 
 ## Find catkin macros and libraries
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
-<<<<<<< HEAD
+
 find_package(catkin REQUIRED COMPONENTS
   roscpp
 )
-=======
-find_package(catkin REQUIRED)
->>>>>>> 9dbbf8d9e1498b8659e6ebf1492be5598f3640b4
 
 ## System dependencies are found with CMake's conventions
 # find_package(Boost REQUIRED COMPONENTS system)
@@ -111,13 +105,8 @@ find_package(catkin REQUIRED)
 catkin_package(
 #  INCLUDE_DIRS include
 #  LIBRARIES turtlebot3_walker
-<<<<<<< HEAD
-  CATKIN_DEPENDS roscpp 
 
-=======
-#  CATKIN_DEPENDS other_catkin_pkg
-#  DEPENDS system_lib
->>>>>>> 9dbbf8d9e1498b8659e6ebf1492be5598f3640b4
+  CATKIN_DEPENDS roscpp 
 )
 
 ###########
@@ -129,6 +118,7 @@ catkin_package(
 include_directories(
   include
   ${catkin_INCLUDE_DIRS}
+
 )
 
 ## Declare a C++ library
