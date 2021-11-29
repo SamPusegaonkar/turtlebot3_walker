@@ -1,0 +1,5 @@
+#Ignore html and latex folders
+/html
+/latex
+run_cppcheck.sh
+run_cpplint.sh
