@@ -47,5 +47,6 @@ A walker algorithm for the turtlebot3 in a ROS package.
   * source ./devel/setup.bash
   * roslaunch turtlebot3_walker main.launch record:=true
   * rosbag play ~/catkin_ws/src/turtlebot3_walker/results/recording.bag # To play the bag file
+  * rosbag info ~/catkin_ws/src/turtlebot3_walker/results/recording.bag # To play the bag file
 
 ```
