@@ -35,8 +35,17 @@ A walker algorithm for the turtlebot3 in a ROS package.
 
 # How to run doxygen
 ```
-  * cd turtlebot3_walker
+  * cd ~/catkin_ws/src/turtlebot3_walker
 
   * doxygen Doxyfile #Open the index file to read the documentation!
+
+```
+
+# How to run the repo and play the rosbag file
+```
+  * cd ~/catkin_ws/
+  * source ./devel/setup.bash
+  * roslaunch turtlebot3_walker main.launch record:=true
+  * rosbag play ~/catkin_ws/src/turtlebot3_walker/results/recording.bag # To play the bag file
 
 ```
