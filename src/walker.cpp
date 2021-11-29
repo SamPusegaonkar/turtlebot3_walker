@@ -55,9 +55,20 @@ Walker::Walker() {
  */
 void Walker::LaserCallback(const sensor_msgs::LaserScan::ConstPtr& msg) {
   this->IsObstacleNearby = false;
-  for (auto i = 0; i < msg->ranges.size()-260; i++) {
+
+  // Get the first 50 values
+  for (auto i = 0; i < 50; i++) {
     auto depth = msg->ranges[i];
-    if ( depth < 0.65 ) {
+    if ( depth < 0.5 ) {
+      this->IsObstacleNearby = true;
+      break;
+    }
+  }
+
+  // Get the las 50 values
+  for (auto i = 290; i < 359; i++) {
+    auto depth = msg->ranges[i];
+    if ( depth < 0.5 ) {
       this->IsObstacleNearby = true;
       break;
     }
@@ -74,9 +85,9 @@ void Walker::Travel() {
   while (ros::ok()) {
     if (this->IsObstacleNearby) {
       velocity.linear.x = 0.0;
-      velocity.angular.z = 0.5;
+      velocity.angular.z = 0.1;
     } else {
-      velocity.linear.x = 0.25;
+      velocity.linear.x = 0.1;
       velocity.angular.z = 0.0;
     }
     this->velocity_publisher.publish(velocity);
