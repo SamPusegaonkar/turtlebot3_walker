@@ -10,6 +10,7 @@ add_compile_options(-std=c++11)
 find_package(catkin REQUIRED COMPONENTS
   roscpp
 )
+
 ## System dependencies are found with CMake's conventions
 # find_package(Boost REQUIRED COMPONENTS system)
 
@@ -103,7 +104,7 @@ catkin_package(
 #  INCLUDE_DIRS include
 #  LIBRARIES turtlebot3_walker
   CATKIN_DEPENDS roscpp 
-#  DEPENDS system_lib
+
 )
 
 ###########
@@ -201,6 +202,9 @@ include_directories(
 
 ## Add folders to be run by python nosetests
 # catkin_add_nosetests(test)
+<<<<<<< HEAD
 
 add_executable(walker src/main.cpp src/walker.cpp)
 target_link_libraries(walker ${catkin_LIBRARIES})
+=======
+>>>>>>> 9dbbf8d9e1498b8659e6ebf1492be5598f3640b4
