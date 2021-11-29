@@ -26,6 +26,7 @@ Walker::Walker() {
   this->velocity_publisher = n.advertise <geometry_msgs::Twist> ("/cmd_vel", 1000);
 }
 
+
 /**
  * @brief A laser callback method to see if a obstacle is nearby
  * @param msg 
@@ -38,5 +39,26 @@ void Walker::LaserCallback(const sensor_msgs::LaserScan::ConstPtr& msg) {
       this->IsObstacleNearby = true;
       break;
     }
+  }
+}
+
+
+/**
+ * @brief A method to move the turtlebot
+ * This bot will rotate when it sees a obstacle
+ */
+void Walker::Travel() {
+  ros::Rate loop_rate(10);
+  while (ros::ok()) {
+    if (this->IsObstacleNearby) {
+      velocity.linear.x = 0.0;
+      velocity.angular.z = 0.5;
+    } else {
+      velocity.linear.x = 0.25;
+      velocity.angular.z = 0.0;
+    }
+    this->velocity_publisher.publish(velocity);
+    ros::spinOnce();
+    loop_rate.sleep();
   }
 }
