@@ -30,6 +30,7 @@
  */
 
 #ifndef INCLUDE_WALKER_H_
+#define INCLUDE_WALKER_H_
 #include "ros/ros.h"
 #include "sensor_msgs/LaserScan.h"
 #include "geometry_msgs/Twist.h"
