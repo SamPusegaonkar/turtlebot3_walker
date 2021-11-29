@@ -26,7 +26,7 @@
  * @brief A walker cpp file which implmenets a walker algorithm
  * @version 0.1
  * @date 2021-11-25
- * @copyright Copyright (c) 2021
+ * @copyright MIT License (c) 2021 Samer Pusegaonkar
  */
 
 #include "ros/ros.h"
