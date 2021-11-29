@@ -32,3 +32,11 @@ A walker algorithm for the turtlebot3 in a ROS package.
   * cpplint --verbose 5 $( find . -name *.cpp | grep -vE -e "^./build/" -e "^./vendor/") $( find . -name *.h | grep -vE -e "^./build/" -e "^./vendor/") > results/cpplint_result.txt
 
 ```
+
+# How to run doxygen
+```
+  * cd turtlebot3_walker
+
+  * doxygen Doxyfile #Open the index file to read the documentation!
+
+```
