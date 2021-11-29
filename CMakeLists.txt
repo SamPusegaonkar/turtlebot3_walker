@@ -201,3 +201,6 @@ include_directories(
 
 ## Add folders to be run by python nosetests
 # catkin_add_nosetests(test)
+
+add_executable(walker src/main.cpp src/walker.cpp)
+target_link_libraries(walker ${catkin_LIBRARIES})
